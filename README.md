@@ -13,7 +13,7 @@ Esta herramienta permite generar archivos CSV de manera rápida y eficiente para
 
 ## 📦 Instalación
 ### Uso Directo (Online)
-Simplemente accede al link de la aplicación y comienza a usarla.
+[Simplemente accede al link de la aplicación y comienza a usarla.](https://ezequielalderete.github.io/genCSV/)
 ### Uso Local
 1. Clona este repositorio:
 git clone https://github.com/tu-usuario/carga-activos.git
