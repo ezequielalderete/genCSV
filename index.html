@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carga Automatizada de Activos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="assets/logoavalian.png" alt="Logo" id="logoImage">
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>
+            🏢 Carga Automatizada de Activos
+            <button type="button" class="btn-info-title" onclick="mostrarInfo()">ℹ</button>
+        </h1>
+        
+        <form id="assetForm">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="sitio">Sitio</label>
+                    <select id="sitio" required>
+                        <option value="">Seleccionar...</option>
+                        <option value="Oficina Corporativa - Corrientes 880">Oficina Rosario</option>
+                        <option value="Oficina Corporativa - Combate de los Pozos 220">Oficina B.Aires</option>
+                        <option value="Sentidos">Sentidos</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="producto">Producto</label>
+                    <select id="producto" required>
+                        <option value="">Seleccionar...</option>
+                        <option value="[MDA] Logitech H390">Auricular H390</option>
+                        <option value="[MDA] Logitech H151">Auricular H151</option>
+                        <option value="[MDA] Logitech M170">Mouse M170</option>
+                        <option value="[MDA] Logitech M110">Mouse M110</option>
+                        <option value="Logitech MK120">Combo MK120</option>
+                        <option value="Lenovo T24-40">Monitor 24-40</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <select id="estado" required>
+                        <option value="">Seleccionar...</option>
+                        <option value="In Store">Stock nuevo</option>
+                        <option value="In Use">En uso</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="proveedor">Proveedor</label>
+                    <select id="proveedor" required>
+                        <option value="">Seleccionar...</option>
+                        <option value="Innover">Innover</option>
+                        <option value="Fravega">Fravega</option>
+                        <option value="Dinabeat">Dinabeat</option>
+                        <option value="Druidics">Druidics</option>
+                        <option value="Veneta">Veneta</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="cantidad">Cantidad de artículos</label>
+                    <input type="number" id="cantidad" min="1" placeholder="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descripcion">Descripción (opcional)</label>
+                    <textarea id="descripcion" placeholder="Ingrese una descripción (opcional)" rows="3"></textarea>
+                </div>
+
+                <div class="nomenclatura-section">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="requiereNombre">
+                        <label for="requiereNombre">¿Requiere Nombre?</label>
+                    </div>
+                    <div class="form-group" id="nomenclaturaGroup">
+                        <label for="nomenclatura">Nomenclatura</label>
+                        <input type="text" id="nomenclatura" placeholder="Siglas...">
+                    </div>
+                    <div class="form-group" id="desdeGroup">
+                        <label for="desde">Desde</label>
+                        <input type="number" id="desde" min="0" placeholder="Desde...">
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="serialNumbers">Serial Number</label>
+                    <textarea id="serialNumbers" placeholder="Ingrese los números de serie (uno por línea)" required></textarea>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="button" class="btn-limpiar" onclick="limpiarCampos()">Limpiar Campos</button>
+                <button type="submit" class="btn-generar">Generar CSV</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="modalInfo" class="modal">
+        <div class="modal-content">
+            <h2 class="modal-header">Información</h2>
+            <div class="modal-body">
+                Esta aplicación fue desarrollada de manera que al completar el formulario se pueda generar un archivo CSV para realizar la posterior carga de nuevos activos de la empresa.
+                <br><br>
+                <strong>Infraestructura TIC</strong>
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-btn modal-btn-primary" onclick="cerrarModal()">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalMensaje" class="modal">
+        <div class="modal-content">
+            <h2 class="modal-header" id="modalTitulo"></h2>
+            <div class="modal-body" id="modalCuerpo"></div>
+            <div class="modal-buttons">
+                <button class="modal-btn modal-btn-primary" onclick="cerrarModalMensaje()">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
